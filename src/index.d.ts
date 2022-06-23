@@ -126,6 +126,7 @@ declare module 'minecraft-protocol' {
 		id?: number
 		session?: SessionOption
 		validateChannelProtocol?: boolean
+		ignoredLoginPluginRequests?: Array<string>
 	}
 
 	export class Server extends EventEmitter {

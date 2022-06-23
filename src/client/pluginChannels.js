@@ -58,6 +58,7 @@ module.exports = function (client, options) {
   }
 
   function onLoginPluginRequest (packet) {
+    if(options.ignoredLoginPluginRequests != undefined && options.ignoredLoginPluginRequests.includes(packet.channel)) return;
     client.write('login_plugin_response', { // write that login plugin request is not understood, just like the Notchian client
       messageId: packet.messageId
     })
